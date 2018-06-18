@@ -1,31 +1,17 @@
 import { Router } from 'express'
 
+import * as orders from './orders'
+
 const router = Router()
 
-router.get('/', (req, res) => {
-  res.status(200).json({
-    message: 'Orders were fetched',
-  })
-})
+router
+  .route('/')
+  .get(orders.getOrders)
+  .post(orders.postOrders)
 
-router.post('/', (req, res) => {
-  res.status(201).json({
-    message: 'Order was created',
-  })
-})
-
-router.get('/:orderId', (req, res) => {
-  res.status(200).json({
-    message: 'Orders details',
-    orderId: req.params.orderId,
-  })
-})
-
-router.delete('/:orderId', (req, res) => {
-  res.status(200).json({
-    message: 'Orders deleted',
-    orderId: req.params.orderId,
-  })
-})
+router
+  .route('/:orderId')
+  .get(orders.getOrderById)
+  .delete(orders.deleteOrder)
 
 export default router

@@ -4,12 +4,14 @@ import app from 'app'
 /* eslint no-undef: 0 */
 describe('Orders', () => {
   describe('/GET orders', () => {
-    test('should get all orders', () => {
-      return request(app)
+    test('should get all orders', async () => {
+      // const response = await request(app)
+      await request(app)
         .get('/orders')
         .expect(200, {
           message: 'Orders were fetched',
         })
+      // console.log(response)
     })
 
     test('should get order with specified ID', () => {
