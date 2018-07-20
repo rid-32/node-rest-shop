@@ -29,9 +29,13 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.3",
     "jest": "^23.1.0",
     "nodemon": "^1.17.5",
     "superagent": "^3.8.3",
     "supertest": "^3.1.0"
-  }
+  },
+  "moduleRoots": [
+    "app"
+  ]
 }

@@ -27,10 +27,16 @@ describe('Orders', () => {
 
   describe('/POST orders', () => {
     test('should create a order', () => {
+      const order = {
+        productId: 123,
+        quantity: 5,
+      }
       return request(app)
         .post('/orders')
+        .send(order)
         .expect(201, {
           message: 'Order was created',
+          order,
         })
     })
   })

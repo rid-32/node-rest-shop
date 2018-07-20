@@ -34,10 +34,16 @@ describe('Products', () => {
 
   describe('/POST products', () => {
     test('should create a product', () => {
+      const createdProduct = {
+        name: 'apples',
+        price: 20,
+      }
       return request(app)
         .post('/products')
+        .send(createdProduct)
         .expect(201, {
           message: 'Handling POST request to /products',
+          createdProduct,
         })
     })
   })

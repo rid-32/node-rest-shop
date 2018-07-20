@@ -1,5 +1,6 @@
 import express from 'express'
 import morgan from 'morgan'
+import bodyParser from 'body-parser'
 
 import { products as productRoutes, orders as orderRoutes } from 'api/routes'
 
@@ -12,6 +13,13 @@ if (process.env.NODE_ENV !== 'test') {
     app.use(morgan('combined'))
   }
 }
+
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+)
+app.use(bodyParser.json())
 
 app.use('/products', productRoutes)
 app.use('/orders', orderRoutes)

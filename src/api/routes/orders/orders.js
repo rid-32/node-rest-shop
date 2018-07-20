@@ -5,8 +5,13 @@ export const getOrders = (req, res) => {
 }
 
 export const postOrders = (req, res) => {
+  const order = {
+    productId: req.body.productId,
+    quantity: req.body.quantity,
+  }
   res.status(201).json({
     message: 'Order was created',
+    order,
   })
 }
 
