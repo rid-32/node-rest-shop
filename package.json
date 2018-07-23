@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
+    "body-parser": "^1.18.3",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
@@ -29,7 +30,6 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
-    "body-parser": "^1.18.3",
     "jest": "^23.1.0",
     "nodemon": "^1.17.5",
     "superagent": "^3.8.3",

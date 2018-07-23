@@ -3,13 +3,13 @@ export const getProducts = (req, res) => {
 }
 
 export const postProducts = (req, res) => {
-  const product = {
+  const createdProduct = {
     name: req.body.name,
     price: req.body.price,
   }
   res.status(201).json({
     message: 'Handling POST request to /products',
-    createdProduct: product,
+    createdProduct,
   })
 }
 
