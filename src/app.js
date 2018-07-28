@@ -1,13 +1,14 @@
 import express from 'express'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
+import config from 'config'
 
 import { products as productRoutes, orders as orderRoutes } from 'api/routes'
 
 const app = express()
 
-if (process.env.NODE_ENV !== 'test') {
-  if (process.env.NODE_ENV === 'development') {
+if (config.get('env') !== 'test') {
+  if (config.get('env') === 'development') {
     app.use(morgan('dev'))
   } else {
     app.use(morgan('combined'))
@@ -21,6 +22,7 @@ app.use(
 )
 app.use(bodyParser.json())
 
+// обработка CORS
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header(

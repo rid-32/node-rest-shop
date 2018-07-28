@@ -4,8 +4,8 @@
   "description": "RESTful API on node.js",
   "main": "index.js",
   "scripts": {
-    "dev": "export NODE_ENV=development && nodemon --exec babel-node -- src/server.js",
-    "start": "export NODE_ENV=production && babel-node src/server.js",
+    "dev": "export NODE_ENV=development && nodemon --exec babel-node -- server.js",
+    "start": "export NODE_ENV=production && babel-node server.js",
     "test": "export NODE_ENV=test && jest --colors",
     "test:watch": "export NODE_ENV=test && jest --colors --watchAll",
     "test:coverage": "export NODE_ENV=test && jest --colors --coverage"
@@ -19,8 +19,13 @@
   "author": "rid-32",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
+    "config": "^2.0.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.2.5",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
